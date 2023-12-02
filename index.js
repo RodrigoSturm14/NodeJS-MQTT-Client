@@ -15,6 +15,7 @@ server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}/`);
 });
 
+/*
 const mqtt = require('mqtt')
 const clientId = 'emqx_nodejs_' + Math.random().toString(16).substring(2, 8)
 const username = 'Rodri'
@@ -52,3 +53,4 @@ client.on('message', (topic, payload) => {
     console.log('Mensaje recibido:', topic, payload.toString())
     //alert("Mensaje recibido:", topic, payload.toString())
 })
+*/
