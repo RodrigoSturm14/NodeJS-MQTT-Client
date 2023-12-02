@@ -1,4 +1,12 @@
 {
+  "name": "nodejs-mqtt-client",
+  "version": "1.0.0",
+  "description": "A minimal Node.js web application.",
+  "main": "index.js",
+  "author": "rod",
+  "license": "MIT",
+   "dependencies": {
+  },
   "scripts": {
     "start": "node index.js"
   }
