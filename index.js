@@ -1,6 +1,20 @@
 /*
 Ejemplo hecho con broker EMQX
 */
+
+const http = require('http');
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World!');
+});
+
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+});
+
 const mqtt = require('mqtt')
 const clientId = 'emqx_nodejs_' + Math.random().toString(16).substring(2, 8)
 const username = 'Rodri'
@@ -25,7 +39,7 @@ client.subscribe(topic, { qos }, (error) => {
     return
   }
   console.log(`Suscripcion exitosa a topico: '${topic}'`)
-  alert("Suscripcion exitosa a topico: '${topic}'")
+  //alert("Suscripcion exitosa a topico: '${topic}'")
 })
 // publicar mensaje
 client.publish(topic, payload, { qos }, (error) => {
@@ -36,5 +50,5 @@ client.publish(topic, payload, { qos }, (error) => {
 // recibir mensaje
 client.on('message', (topic, payload) => {
     console.log('Mensaje recibido:', topic, payload.toString())
-    alert("Mensaje recibido:", topic, payload.toString())
+    //alert("Mensaje recibido:", topic, payload.toString())
 })
